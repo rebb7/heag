@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HeaG Marketing｜短影片 & 數碼行銷顧問</title>
-  <meta name="description" content="HeaG Marketing 專注短影片行銷、廣告投放、SEO、Threads、KOL 推廣與社交小號策略，幫品牌用內容與數據帶來更多 WhatsApp 查詢與客戶。">
+  <meta name="description" content="HeaG Marketing 專注社交媒體營銷、品牌策劃與內容創作，為不擅長網絡宣傳、難以自行尋找客戶的企業，提供一條龍解決方案。">
 
   <style>
     :root {
@@ -45,20 +45,37 @@
       align-items: center;
       gap: 10px;
     }
-    .logo-wrap img {
-      height: 40px;
-      width: auto;
-      display: block;
-    }
+.logo-wrap img {
+  height: 70px;
+  width: 70px;          /* 高闊一樣先可以正圓 */
+  display: block;
+  border-radius: 10%;   /* 圓形關鍵 */
+  object-fit: cover;    /* 裁切成圓形內部 */
+  background: #ffffff;  /* 可選：白色底 */
+  padding: 0px;         /* 可選：留少少邊，似 app icon feel */
+}
+
     .brand-name {
       font-size: 20px;
       font-weight: 700;
       color: var(--blue);
     }
-    .header-note {
+    /* 右上角 WhatsApp 按鈕 */
+    .header-wts-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #25D366;
+      color: #ffffff;
       font-size: 12px;
-      color: var(--muted);
-      text-align: right;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+      cursor: pointer;
+    }
+    .header-wts-btn span.icon {
+      font-size: 14px;
     }
 
     /* HERO -------------------------------------------------- */
@@ -171,38 +188,12 @@
       margin-bottom: 16px;
     }
 
-    /* STATS SECTION（原本 video 區） ------------------------ */
+    /* STATS / CASE SECTION ---------------------------------- */
     .video-section {
       background: var(--bg);
       border-radius: 20px;
       padding: 22px 20px 20px;
     }
-    .video-inner {
-      display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 2fr);
-      gap: 22px;
-      align-items: flex-start;
-    }
-    .video-copy-title {
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-    .video-copy-list {
-      font-size: 13px;
-      color: var(--muted);
-      margin: 10px 0 14px;
-    }
-    .video-copy-list p {
-      margin-bottom: 4px;
-    }
-    .video-copy-list p::before {
-      content: "•";
-      margin-right: 6px;
-      color: var(--blue);
-      font-weight: 700;
-    }
-
     .stats-grid {
       display: grid;
       grid-template-columns: minmax(0, 1fr);
@@ -223,22 +214,18 @@
       margin-bottom: 4px;
     }
     .stat-main {
-      font-size: 20px;
+      font-size: 16px;
       font-weight: 700;
       margin-bottom: 2px;
     }
-    .stat-note {
-      font-size: 12px;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
     .stat-list {
-      font-size: 12px;
+      font-size: 13px;
       color: var(--muted);
       list-style: none;
+      margin-top: 6px;
     }
     .stat-list li {
-      margin-bottom: 2px;
+      margin-bottom: 3px;
     }
 
     .logo-strip {
@@ -249,12 +236,7 @@
     .logo-strip-title {
       font-size: 14px;
       font-weight: 700;
-      margin-bottom: 4px;
-    }
-    .logo-strip-sub {
-      font-size: 12px;
-      color: var(--muted);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     .logo-row {
       display: flex;
@@ -319,6 +301,8 @@
       font-size: 15px;
       font-weight: 700;
       margin-bottom: 4px;
+      display: flex;
+      align-items: center;
     }
     .service-tag {
       font-size: 12px;
@@ -339,6 +323,21 @@
     }
     .service-list li {
       margin-bottom: 3px;
+    }
+
+    /* 圓形 ICON --------------------------------------------- */
+    .circle-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      margin-right: 6px;
     }
 
     /* PROCESS ----------------------------------------------- */
@@ -430,6 +429,55 @@
       margin-top: 4px;
     }
 
+    /* MEDIA STATS SECTION ----------------------------------- */
+    .media-section {
+      background: #ffffff;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      padding: 20px 18px 18px;
+    }
+    .media-icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .media-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--bg);
+      font-size: 12px;
+      color: var(--ink);
+    }
+    .media-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .dot-ig { background: #e1306c; }
+    .dot-threads { background: #000000; }
+    .dot-tiktok { background: #000000; }
+    .dot-fb { background: #1877f2; }
+    .dot-yt { background: #ff0000; }
+    .dot-ga { background: #f9ab00; }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .metrics-grid img {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      object-fit: cover;
+      background: #f9fafb;
+    }
+
     /* FOOTER ------------------------------------------------- */
     footer {
       margin-top: 36px;
@@ -459,12 +507,14 @@
       width: 32px;
       height: 32px;
       display: block;
+      border-radius: 50%;   /* 圓形 icon */
+      background: #ffffff;  /* 白色底方便突顯 icon */
+      padding: 4px;         /* 留少少邊 */
     }
 
     /* RESPONSIVE -------------------------------------------- */
     @media (max-width: 900px) {
       .hero-inner,
-      .video-inner,
       .grid-3,
       .steps,
       .service-grid {
@@ -475,6 +525,14 @@
       }
       .page {
         padding: 14px 12px 70px;
+      }
+      .metrics-grid {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+    }
+    @media (max-width: 600px) {
+      .metrics-grid {
+        grid-template-columns: repeat(2, minmax(0,1fr));
       }
     }
   </style>
@@ -488,10 +546,12 @@
       <img src="heag-logo.png" alt="HeaG Marketing Logo">
       <div class="brand-name">HeaG Marketing</div>
     </div>
-    <div class="header-note">
-      WhatsApp 查詢：<br />
-      <strong>+852 5341 4064</strong>
-    </div>
+    <a class="header-wts-btn"
+       href="https://wa.me/85253414064?text=我想了解HeaG%20Marketing%20服務"
+       target="_blank" rel="noopener">
+      <span class="icon">💬</span>
+      <span>WhatsApp 查詢</span>
+    </a>
   </header>
 
   <!-- HERO 區 -->
@@ -522,7 +582,7 @@
           <a class="btn-primary"
              href="mailto:heag.marketing@gmail.com?subject=查詢HeaG%20Marketing%20服務&body=你好%2C%20我想了解HeaG%20Marketing%20的行銷服務">
             <span class="icon">✉️</span>
-            <span>Email 聯絡查詢</span>
+            <span>Email 聯絡</span>
           </a>
 
           <!-- Scroll -->
@@ -531,86 +591,177 @@
       </div>
 
       <div class="hero-visual">
-        <img src="https://via.placeholder.com/640x480.png?text=HeaG+Marketing+Hero+Image"
-             alt="HeaG Marketing hero visual">
+        <img src="hero-main.jpg" alt="HeaG Marketing hero visual">
       </div>
     </div>
   </section>
 
-  <!-- 內容成效數據 + 合作機構 LOGO -->
-  <section class="video-section" id="video">
-    <h2 class="section-title">內容成效數據</h2>
+  <!-- 公司介紹 About -->
+  <section id="about">
+    <h2 class="section-title">公司介紹｜About Us</h2>
     <p class="section-sub">
-      呢一區可以之後填入你真實的 IG / Reels / Threads / SEO 數據，用數字講故事。
+      我們是一間專注於社交媒體營銷、品牌策劃與內容創作的行銷公司，
+      特別針對 <strong>不擅長做網絡宣傳、難以自行尋找客戶的企業</strong>，
+      提供一條龍解決方案。
     </p>
 
-    <div class="video-inner">
-      <!-- 左：解說文字 -->
-      <div>
-        <div class="video-copy-title">用數字講故事，而唔係用感覺做行銷。</div>
-        <div class="video-copy-list">
-          <p>清楚列出 IG 貼文、Reels、Threads 各自帶來嘅曝光同互動。</p>
-          <p>用真實數據同案例俾客人睇，建立信任感。</p>
-          <p>方便客人明白：你做內容唔係靠估，而係有脈絡、有策略、有驗證。</p>
+    <p style="font-size:14px; margin-bottom:20px;">
+      <em>
+        We are a marketing agency specializing in social media marketing,
+        brand strategy, and content creation — providing end-to-end solutions
+        specifically for businesses that struggle with online promotion or
+        finding customers on their own.
+      </em>
+    </p>
+
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="service-title">
+          <span class="circle-icon">SM</span>品牌社交媒體賬戶運營
         </div>
-        <p class="section-sub" style="margin-bottom:0;">
-          👉 你可以之後將以下數字改成「過去 30 日」／「最近一個 Project」的真實統計。
-        </p>
+        <ul class="service-list">
+          <li>提升品牌在 IG、TikTok、Threads 等平台的活躍度與影響力。</li>
+          <li>建立品牌風格、語調與視覺一致性。</li>
+        </ul>
       </div>
 
-      <!-- 右：數據卡片 -->
-      <div class="stats-grid">
-        <!-- IG Posts -->
-        <div class="stat-card">
-          <div class="stat-label">IG POSTS</div>
-          <div class="stat-main">000 篇</div>
-          <div class="stat-note">平均互動率：0.0%</div>
-          <ul class="stat-list">
-            <li>總曝光：0,000+</li>
-            <li>平均儲存／分享：0.0 次 / 貼文</li>
-            <li>帶來 WhatsApp 查詢：0+ 次</li>
-          </ul>
+      <div class="service-card">
+        <div class="service-title">
+          <span class="circle-icon">C</span>創意內容策劃與製作
         </div>
+        <ul class="service-list">
+          <li>從短片到專業圖文，為你創造具轉化力的社群內容。</li>
+          <li>Reels、貼文、Threads 文案完整製作。</li>
+        </ul>
+      </div>
 
-        <!-- IG Reels -->
-        <div class="stat-card">
-          <div class="stat-label">IG REELS</div>
-          <div class="stat-main">000 條</div>
-          <div class="stat-note">平均觀看完成率：0.0%</div>
-          <ul class="stat-list">
-            <li>總播放：0,000,000+ 次</li>
-            <li>單條最高播放：0,000,000 次</li>
-            <li>由 Reels 直接私訊：0+ 人</li>
-          </ul>
+      <div class="service-card">
+        <div class="service-title">
+          <span class="circle-icon">D</span>專業數據分析與報告
         </div>
+        <ul class="service-list">
+          <li>定期提供成效報告與數據分析，協助你洞察市場反饋。</li>
+          <li>根據數據調整內容方向與投放策略。</li>
+        </ul>
+      </div>
 
-        <!-- Threads -->
-        <div class="stat-card">
-          <div class="stat-label">THREADS</div>
-          <div class="stat-main">000 則</div>
-          <div class="stat-note">平均互動：0.0 次 / 貼文</div>
-          <ul class="stat-list">
-            <li>總曝光：0,000+ 人次</li>
-            <li>收藏 / 回覆比例：0.0%</li>
-            <li>導流回 IG / 網站：0+ 次點擊</li>
-          </ul>
+      <div class="service-card">
+        <div class="service-title">
+          <span class="circle-icon">S</span>品牌定位與策略建議
         </div>
+        <ul class="service-list">
+          <li>結合你的市場定位，打造專屬推廣策略。</li>
+          <li>協助品牌在同業中突圍，建立差異化優勢。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 成功個案 + LOGO 區 -->
+  <section class="video-section" id="success-cases">
+    <h2 class="section-title">成功個案｜Success Cases</h2>
+    <p class="section-sub">
+      透過一套完整的內容策略＋行銷漏斗，
+      HeaG Marketing 已為花店、帛事品牌及餐飲類客戶帶來可量化的成效。
+    </p>
+
+    <div class="stats-grid">
+      <!-- Case 1: Mochi 花店 -->
+      <div class="stat-card">
+        <div class="stat-label">成功個案｜Mochi 花店</div>
+        <div class="stat-main">一個月內數據</div>
+        <ul class="stat-list">
+          <li>📈 一個月多平台自然流量：<strong>150 萬+</strong></li>
+          <li>🌐 網站訪問率提升：<strong>3500%</strong></li>
+          <li>🤝 20+ KOL 公關合作</li>
+          <li>👍 單次最高點贊：<strong>2.4 萬</strong></li>
+          <li>⭐ 與 7–22 萬粉絲 KOL 合作</li>
+        </ul>
+      </div>
+
+      <!-- Case 2: 九龍帛事花店 -->
+      <div class="stat-card">
+        <div class="stat-label">成功個案｜九龍帛事花店</div>
+        <div class="stat-main">一個月內數據</div>
+        <ul class="stat-list">
+          <li>📈 一個月多平台自然流量：<strong>150 萬+</strong></li>
+          <li>🌐 網站訪問率提升：<strong>5000%</strong></li>
+          <li>👀 單次最高瀏覽次數：<strong>33 萬</strong></li>
+          <li>👍 單次最高點贊：<strong>2.4 萬</strong></li>
+        </ul>
+      </div>
+
+      <!-- Case 3: HeaChicken -->
+      <div class="stat-card">
+        <div class="stat-label">成功個案｜HeaChicken</div>
+        <div class="stat-main">一個月內數據</div>
+        <ul class="stat-list">
+          <li>📈 一個月 IG 自然流量：<strong>200 萬+</strong></li>
+          <li>🌐 網站訪問率提升：<strong>300%</strong></li>
+          <li>👀 單次帖子最高瀏覽次數：<strong>31 萬+</strong></li>
+          <li>🎬 單次 Reels 最高瀏覽次數：<strong>60 萬+</strong></li>
+        </ul>
       </div>
     </div>
 
     <!-- 合作機構 LOGO 區 -->
     <div class="logo-strip">
-      <div class="logo-strip-title">合作品牌 / 機構（部分）</div>
-      <div class="logo-strip-sub">
-        下方 Logo 目前為示意圖，你可以之後換成自己真實合作過嘅品牌：Salon、診所、教育機構、電商品牌等等。
-      </div>
+      <div class="logo-strip-title">已合作 20+ 品牌及單位（包括線上業務與實體店）</div>
       <div class="logo-row">
-        <img src="https://via.placeholder.com/120x60.png?text=Brand+1" alt="合作品牌 1">
-        <img src="https://via.placeholder.com/120x60.png?text=Brand+2" alt="合作品牌 2">
-        <img src="https://via.placeholder.com/120x60.png?text=Brand+3" alt="合作品牌 3">
-        <img src="https://via.placeholder.com/120x60.png?text=Brand+4" alt="合作品牌 4">
-        <img src="https://via.placeholder.com/120x60.png?text=Brand+5" alt="合作品牌 5">
+        <img src="partner1.png" alt="合作品牌 1">
+        <img src="partner2.png" alt="合作品牌 2">
+        <img src="partner3.png" alt="合作品牌 3">
+        <img src="partner4.png" alt="合作品牌 4">
+        <img src="partner5.png" alt="合作品牌 5">
+        <img src="partner6.png" alt="合作品牌 6">
+        <img src="partner7.png" alt="合作品牌 7">
+        <img src="partner8.png" alt="合作品牌 8">
+        <img src="partner9.png" alt="合作品牌 9">
       </div>
+    </div>
+  </section>
+
+  <!-- Media icon + 真實數據截圖 -->
+  <section id="media-metrics" class="media-section">
+    <h2 class="section-title">平台成效截圖｜Media Performance</h2>
+    <p class="section-sub">
+      部分來自 Instagram、Threads、TikTok、Facebook、YouTube 及 GA4 的實際數據截圖，
+      讓你清楚見到內容及行銷漏斗帶來的變化。
+    </p>
+
+    <div class="media-icons">
+      <div class="media-pill">
+        <span class="media-dot dot-ig"></span> Instagram
+      </div>
+      <div class="media-pill">
+        <span class="media-dot dot-threads"></span> Threads
+      </div>
+      <div class="media-pill">
+        <span class="media-dot dot-tiktok"></span> TikTok
+      </div>
+      <div class="media-pill">
+        <span class="media-dot dot-fb"></span> Facebook
+      </div>
+      <div class="media-pill">
+        <span class="media-dot dot-yt"></span> YouTube
+      </div>
+      <div class="media-pill">
+        <span class="media-dot dot-ga"></span> GA4 / Analytics
+      </div>
+    </div>
+
+    <div class="metrics-grid">
+      <img src="metrics1.jpg" alt="成效截圖 1">
+      <img src="metrics2.jpg" alt="成效截圖 2">
+      <img src="metrics3.jpg" alt="成效截圖 3">
+      <img src="metrics4.jpg" alt="成效截圖 4">
+      <img src="metrics5.jpg" alt="成效截圖 5">
+      <img src="metrics6.jpg" alt="成效截圖 6">
+      <img src="metrics7.jpg" alt="成效截圖 7">
+      <img src="metrics8.jpg" alt="成效截圖 8">
+      <img src="metrics9.jpg" alt="成效截圖 9">
+      <img src="metrics10.jpg" alt="成效截圖 10">
+      <img src="metrics11.jpg" alt="成效截圖 11">
     </div>
   </section>
 
@@ -740,11 +891,11 @@
     </div>
   </section>
 
-  <!-- 服務模組 / 收費模式（無價錢版） -->
+  <!-- 服務模組 / 方案 -->
   <section id="plans">
-    <h2 class="section-title">服務模組與方案</h2>
+    <h2 class="section-title">服務模組與方案（不公開價錢版）</h2>
     <p class="section-sub">
-      價錢會根據工作範圍與時間長度而定，以下為常見方案架構，方便你揀選方向。
+      價錢會視乎服務內容與時長而定，以下為常見方案架構，方便你揀選方向。
     </p>
 
     <div class="plan-group">
