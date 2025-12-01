@@ -45,15 +45,15 @@
       align-items: center;
       gap: 10px;
     }
-.logo-wrap img {
-  height: 70px;
-  width: 70px;          /* 高闊一樣先可以正圓 */
-  display: block;
-  border-radius: 10%;   /* 圓形關鍵 */
-  object-fit: cover;    /* 裁切成圓形內部 */
-  background: #ffffff;  /* 可選：白色底 */
-  padding: 0px;         /* 可選：留少少邊，似 app icon feel */
-}
+    .logo-wrap img {
+      height: 40px;
+      width: 40px;
+      display: block;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #ffffff;
+      padding: 0;
+    }
 
     .brand-name {
       font-size: 20px;
@@ -190,10 +190,37 @@
 
     /* STATS / CASE SECTION ---------------------------------- */
     .video-section {
-      background: var(--bg);
+      position: relative;
       border-radius: 20px;
       padding: 22px 20px 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: transparent;
     }
+    /* ✅ 成功個案：半透明圖片背景（記得放一張 success-bg.jpg） */
+    .video-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(15,23,42,0.70),
+          rgba(56,75,181,0.68)
+        ),
+        url("success-bg.jpg") center/cover no-repeat;
+      opacity: 0.75; /* 控制整體透明度 */
+      z-index: 0;
+    }
+    .video-section > * {
+      position: relative;
+      z-index: 1;
+      color: #f9fafb;
+    }
+    .video-section .section-sub {
+      color: rgba(226,232,240,0.9);
+    }
+
     .stats-grid {
       display: grid;
       grid-template-columns: minmax(0, 1fr);
@@ -201,14 +228,15 @@
     }
     .stat-card {
       border-radius: 14px;
-      background: #ffffff;
-      border: 1px solid var(--line);
+      background: rgba(15,23,42,0.78);
+      border: 1px solid rgba(148,163,184,0.7);
       padding: 12px 12px 10px;
+      backdrop-filter: blur(6px);
     }
     .stat-label {
       font-size: 12px;
       font-weight: 700;
-      color: var(--blue);
+      color: #e5e7eb;
       text-transform: uppercase;
       letter-spacing: 1px;
       margin-bottom: 4px;
@@ -217,19 +245,25 @@
       font-size: 16px;
       font-weight: 700;
       margin-bottom: 2px;
+      color: #f9fafb;
     }
     .stat-list {
       font-size: 13px;
-      color: var(--muted);
+      color: #e5e7eb;
       list-style: none;
       margin-top: 6px;
     }
     .stat-list li {
       margin-bottom: 3px;
     }
+    /* ✅ 成功個案數字放大＋彩色 */
+    .stat-list strong {
+      font-size: 18px;
+      color: var(--orange);
+    }
 
     .logo-strip {
-      border-top: 1px solid var(--line);
+      border-top: 1px solid rgba(148,163,184,0.7);
       margin-top: 20px;
       padding-top: 14px;
     }
@@ -237,6 +271,7 @@
       font-size: 14px;
       font-weight: 700;
       margin-bottom: 8px;
+      color: #e5e7eb;
     }
     .logo-row {
       display: flex;
@@ -296,6 +331,7 @@
       border: 1px solid var(--line);
       padding: 16px 14px 16px;
       background: #ffffff;
+      transition: transform .18s ease, box-shadow .18s ease;
     }
     .service-title {
       font-size: 15px;
@@ -323,6 +359,16 @@
     }
     .service-list li {
       margin-bottom: 3px;
+    }
+
+    /* ✅ About 區 4 個服務卡：藍黃半透明背景 */
+    #about .service-card {
+      background: linear-gradient(
+        135deg,
+        rgba(56, 75, 181, 0.06),
+        rgba(255, 188, 98, 0.16)
+      );
+      border-color: rgba(56, 75, 181, 0.18);
     }
 
     /* 圓形 ICON --------------------------------------------- */
@@ -376,6 +422,7 @@
       padding: 16px 14px 14px;
       background: #ffffff;
       margin-bottom: 12px;
+      transition: transform .18s ease, box-shadow .18s ease;
     }
     .plan-title {
       font-size: 15px;
@@ -431,7 +478,10 @@
 
     /* MEDIA STATS SECTION ----------------------------------- */
     .media-section {
-      background: #ffffff;
+      background: radial-gradient(circle at top left,
+                    rgba(56,75,181,0.10),
+                    rgba(255,188,98,0.08),
+                    #ffffff);
       border-radius: 20px;
       border: 1px solid var(--line);
       padding: 20px 18px 18px;
@@ -448,9 +498,11 @@
       gap: 6px;
       padding: 5px 10px;
       border-radius: 999px;
-      background: var(--bg);
+      background: rgba(255,255,255,0.75);
       font-size: 12px;
       color: var(--ink);
+      border: 1px solid rgba(148,163,184,0.35);
+      backdrop-filter: blur(4px);
     }
     .media-dot {
       width: 10px;
@@ -507,9 +559,49 @@
       width: 32px;
       height: 32px;
       display: block;
-      border-radius: 50%;   /* 圓形 icon */
-      background: #ffffff;  /* 白色底方便突顯 icon */
-      padding: 4px;         /* 留少少邊 */
+      border-radius: 50%;
+      background: #ffffff;
+      padding: 4px;
+    }
+
+    /* 提供的服務 & 服務模組 區塊背景 + 動畫 ------------------ */
+    #services,
+    #plans {
+      background: radial-gradient(circle at top left,
+                  rgba(56,75,181,0.15),
+                  rgba(255,188,98,0.05),
+                  #ffffff);
+      border-radius: 20px;
+      padding: 22px 20px 24px;
+    }
+
+    /* 進場動畫 */
+    @keyframes card-fade-up {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #services .service-card,
+    #plans .plan-group {
+      animation: card-fade-up .6s ease-out both;
+      background: linear-gradient(
+        135deg,
+        rgba(56,75,181,0.04),
+        rgba(255,188,98,0.12)
+      );
+      border-color: rgba(56,75,181,0.18);
+    }
+
+    #services .service-card:hover,
+    #plans .plan-group:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(15,23,42,0.12);
     }
 
     /* RESPONSIVE -------------------------------------------- */
@@ -893,7 +985,7 @@
 
   <!-- 服務模組 / 方案 -->
   <section id="plans">
-    <h2 class="section-title">服務模組與方案（不公開價錢版）</h2>
+    <h2 class="section-title">服務模組與方案</h2>
     <p class="section-sub">
       價錢會視乎服務內容與時長而定，以下為常見方案架構，方便你揀選方向。
     </p>
