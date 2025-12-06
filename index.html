@@ -533,38 +533,57 @@
     .dot-yt { background: #ff0000; }
     .dot-ga { background: #f9ab00; }
 
-    /* ✅ 整個成效截圖區的排版（回到最初設定） */
+    /* ✅ 整體排版：保持「最初方法」 */
 .metrics-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 8px;              /* ✅ 還原有少少空隙的感覺 */
+  gap: 8px;
   margin-top: 10px;
 }
 
+/* ✅ 全部圖片基本樣式 */
 .metrics-grid img {
   width: 100%;
   display: block;
-  border-radius: 8px;    /* ✅ 跟最初一樣：圓角 */
+  border-radius: 10px;
   border: 1px solid var(--line);
-  object-fit: cover;     /* ✅ metrics6–11 用 cover */
-  background: #f9fafb;   /* ✅ 淺色底 */
+  background: #f9fafb;
 }
 
-/* ✅ metrics1–5：特別處理（跟 metrics6–11 不一樣）*/
+/* ===============================
+   ✅ metrics 1–5：黑底托比例（你原本效果）
+================================ */
 .metrics-grid img:nth-child(-n+5) {
-  height: 160px;         /* 固定高度，令 1–5 視覺一致 */
-  object-fit: contain;   /* 保持比例不裁切 */
-  background: #000000;   /* 黑底托住 screenshot */
+  height: 160px;
+  object-fit: contain;
+  background: #000000;
   padding: 10px;
   box-sizing: border-box;
-  border-radius: 16px;   /* 可以比原本再圓少少 */
-  border: none;          /* 移除邊框，黑底會更乾淨 */
+  border-radius: 16px;
+  border: none;
 }
 
-/* ✅ 手機版：同原本一樣，兩張一行 */
+/* ===============================
+   ✅ metrics 6–11：高度統一 + 全圖顯示 + 白底補空缺
+================================ */
+.metrics-grid img:nth-child(n+6) {
+  height: 200px;          /* ✅ 統一高度（你可改 180 / 220 / 240） */
+  object-fit: contain;   /* ✅ 顯示全圖，不裁切 */
+  background: #ffffff;   /* ✅ 用白色補空缺 */
+  padding: 8px;          /* ✅ 留少少邊，避免貼實 */
+  box-sizing: border-box;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+}
+
+/* ✅ 手機版：兩張一行（保持你原本） */
 @media (max-width: 900px) {
   .metrics-grid {
     grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+
+  .metrics-grid img:nth-child(n+6) {
+    height: 180px;       /* ✅ 手機版高度同步統一 */
   }
 }
 
