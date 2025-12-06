@@ -188,6 +188,16 @@
       margin-bottom: 16px;
     }
 
+    /* ✅ 通用圖片樣式（About / Who / Plans） */
+    .section-photo {
+      width: 100%;
+      display: block;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+      margin-top: 8px;
+    }
+
     /* STATS / CASE SECTION ---------------------------------- */
     .video-section {
       position: relative;
@@ -197,7 +207,6 @@
       border: 1px solid rgba(255,255,255,0.2);
       background: transparent;
     }
-    /* ✅ 成功個案：半透明圖片背景（記得放一張 success-bg.jpg） */
     .video-section::before {
       content: "";
       position: absolute;
@@ -209,7 +218,7 @@
           rgba(56,75,181,0.68)
         ),
         url("success-bg.jpg") center/cover no-repeat;
-      opacity: 0.75; /* 控制整體透明度 */
+      opacity: 0.75;
       z-index: 0;
     }
     .video-section > * {
@@ -256,7 +265,6 @@
     .stat-list li {
       margin-bottom: 3px;
     }
-    /* ✅ 成功個案數字放大＋彩色 */
     .stat-list strong {
       font-size: 18px;
       color: var(--orange);
@@ -361,7 +369,6 @@
       margin-bottom: 3px;
     }
 
-    /* ✅ About 區 4 個服務卡：藍黃半透明背景 */
     #about .service-card {
       background: linear-gradient(
         135deg,
@@ -371,7 +378,6 @@
       border-color: rgba(56, 75, 181, 0.18);
     }
 
-    /* 圓形 ICON --------------------------------------------- */
     .circle-icon {
       display: inline-flex;
       align-items: center;
@@ -573,7 +579,6 @@
       padding: 22px 20px 24px;
     }
 
-    /* 進場動畫 */
     @keyframes card-fade-up {
       from {
         opacity: 0;
@@ -686,65 +691,18 @@
     </div>
   </section>
 
-  <!-- 公司介紹 About -->
+  <!-- 公司介紹 About（改成圖片） -->
   <section id="about">
-    <h2 class="section-title">公司介紹｜About Us</h2>
+    <!-- <h2 class="section-title">公司介紹｜About Us</h2> -->
     <p class="section-sub">
       我們是一間專注於社交媒體營銷、品牌策劃與內容創作的行銷公司，
-      特別針對 <strong>不擅長做網絡宣傳、難以自行尋找客戶的企業</strong>，
-      提供一條龍解決方案。
+      特別針對不擅長做網絡宣傳、難以自行尋找客戶的企業，提供一條龍解決方案。
     </p>
-
-    <p style="font-size:14px; margin-bottom:20px;">
-      <em>
-        We are a marketing agency specializing in social media marketing,
-        brand strategy, and content creation — providing end-to-end solutions
-        specifically for businesses that struggle with online promotion or
-        finding customers on their own.
-      </em>
-    </p>
-
-    <div class="service-grid">
-      <div class="service-card">
-        <div class="service-title">
-          <span class="circle-icon">SM</span>品牌社交媒體賬戶運營
-        </div>
-        <ul class="service-list">
-          <li>提升品牌在 IG、TikTok、Threads 等平台的活躍度與影響力。</li>
-          <li>建立品牌風格、語調與視覺一致性。</li>
-        </ul>
-      </div>
-
-      <div class="service-card">
-        <div class="service-title">
-          <span class="circle-icon">C</span>創意內容策劃與製作
-        </div>
-        <ul class="service-list">
-          <li>從短片到專業圖文，為你創造具轉化力的社群內容。</li>
-          <li>Reels、貼文、Threads 文案完整製作。</li>
-        </ul>
-      </div>
-
-      <div class="service-card">
-        <div class="service-title">
-          <span class="circle-icon">D</span>專業數據分析與報告
-        </div>
-        <ul class="service-list">
-          <li>定期提供成效報告與數據分析，協助你洞察市場反饋。</li>
-          <li>根據數據調整內容方向與投放策略。</li>
-        </ul>
-      </div>
-
-      <div class="service-card">
-        <div class="service-title">
-          <span class="circle-icon">S</span>品牌定位與策略建議
-        </div>
-        <ul class="service-list">
-          <li>結合你的市場定位，打造專屬推廣策略。</li>
-          <li>協助品牌在同業中突圍，建立差異化優勢。</li>
-        </ul>
-      </div>
-    </div>
+    <img
+      src="about-section.jpg"
+      alt="HeaG Marketing 公司介紹與四大核心服務簡介"
+      class="section-photo"
+    >
   </section>
 
   <!-- 成功個案 + LOGO 區 -->
@@ -855,7 +813,7 @@
     </div>
   </section>
 
-  <!-- 提供的服務 -->
+  <!-- 提供的服務（保留文字版） -->
   <section id="services">
     <h2 class="section-title">提供的服務</h2>
     <p class="section-sub">
@@ -944,123 +902,30 @@
     </div>
   </section>
 
-  <!-- 適合對象 -->
+  <!-- 適合對象（改成圖片） -->
   <section id="who">
-    <h2 class="section-title">HeaG Marketing 適合邊啲人？</h2>
+    <!-- <h2 class="section-title">HeaG Marketing 適合邊啲人？</h2>
     <p class="section-sub">
       無論你係實體店、內容創作者，定係想用數據驅動成長的品牌，我哋都可以幫你設計對應方案。
-    </p>
-
-    <div class="grid-3">
-      <div class="card">
-        <div class="card-badge">對象 01</div>
-        <div class="card-title">想建立個人品牌嘅創作者</div>
-        <div class="card-text">
-          想喺 IG / YouTube / Threads 上面建立專業形象，
-          由日常分享升級到有系統、有策略的內容輸出。
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-badge">對象 02</div>
-        <div class="card-title">有實體店／服務，但缺乏曝光</div>
-        <div class="card-text">
-          Salon、診所、工作室、教室⋯⋯
-          需要用短片、圖文、口碑去展示環境、服務與客人故事。
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-badge">對象 03</div>
-        <div class="card-title">想用內容引流到 WhatsApp 成交</div>
-        <div class="card-text">
-          已經有好產品／好服務，只差一個清晰行銷漏斗，
-          將冷流量一步步變成願意主動私訊嘅準客戶。
-        </div>
-      </div>
-    </div>
+    </p> -->
+    <img
+      src="who-section.jpg"
+      alt="HeaG Marketing 適合對象：創作者、實體店及需要 WhatsApp 成交漏斗嘅品牌"
+      class="section-photo"
+    >
   </section>
 
-  <!-- 服務模組 / 方案 -->
+  <!-- 服務模組 / 方案（改成圖片） -->
   <section id="plans">
-    <h2 class="section-title">服務模組與方案</h2>
+    <h2 class="section-title">模組與方案</h2>
     <p class="section-sub">
       價錢會視乎服務內容與時長而定，以下為常見方案架構，方便你揀選方向。
     </p>
-
-    <div class="plan-group">
-      <div class="plan-title">🎬 01｜影片創作方案（IG / Reels / TikTok）</div>
-      <div class="plan-tag">適合：想透過影片快速建立品牌聲量的商戶。</div>
-      <ul class="plan-list">
-        <li>內容包含：腳本策劃、拍攝執行、剪接、字幕、封面設計、簡報回顧。</li>
-        <li>支援多平台輸出（IG / TikTok / Shorts），可用於品牌推廣或廣告素材。</li>
-      </ul>
-    </div>
-
-    <div class="plan-group">
-      <div class="plan-title">📈 02｜廣告投放方案（Meta / Google / TikTok）</div>
-      <div class="plan-tag">適合：專注 ROAS、曝光、流量、訂單轉化的品牌。</div>
-      <ul class="plan-list">
-        <li>內容包含：廣告策略擬定、文案與素材建議、A/B 測試、再行銷佈局。</li>
-        <li>定期報告與優化建議，目標導向：曝光／流量／轉化。</li>
-      </ul>
-    </div>
-
-    <div class="plan-group">
-      <div class="plan-title">🤝 03｜KOL / KOC / MI 推廣方案</div>
-      <div class="plan-tag">適合：需要透過真人口碑建立信任的餐飲、生活、健康等品牌。</div>
-      <ul class="plan-list">
-        <li>內容包含：篩選、洽談、合作執行、素材授權及成效報告。</li>
-        <li>涵蓋貼文、Story、試食／試用合作，可延伸素材再投放廣告。</li>
-      </ul>
-    </div>
-
-    <div class="plan-group">
-      <div class="plan-title">💬 04｜Threads 代營運方案</div>
-      <div class="plan-tag">適合：想打造人格化品牌、用文字建立連結的品牌。</div>
-      <ul class="plan-list">
-        <li>內容包含：品牌語調設計、每日貼文節奏、互動留言、社群話題營造。</li>
-        <li>以觀點帖、故事帖、互動帖、轉化帖組合，建立穩定存在感。</li>
-      </ul>
-    </div>
-
-    <div class="plan-group">
-      <div class="plan-title">🔍 05｜SEO / SEM 網站方案</div>
-      <div class="plan-tag">適合：重視長期自然流量與搜尋曝光的品牌。</div>
-      <ul class="plan-list">
-        <li>內容包含：關鍵字研究、內容優化、網站結構調整、外鏈策略與追蹤報告。</li>
-        <li>可分入門、中階、長期優化方案，配合不同成長階段。</li>
-      </ul>
-    </div>
-
-    <div class="plan-group">
-      <div class="plan-title">📱 06｜社交小號策略（輿論布局）</div>
-      <div class="plan-tag">適合：品牌公關、口碑營造、自然滲透策略。</div>
-      <ul class="plan-list">
-        <li>內容包含：品牌輿論管理、留言導向、社群矩陣打造與話題引導。</li>
-        <li>透過多帳號自然推動品牌熱度，從討論 → 搜索 → 主帳導流。</li>
-      </ul>
-    </div>
-
-    <div class="plan-group">
-      <div class="plan-title">🎨 07｜單張設計 / 包月設計方案</div>
-      <div class="plan-tag">適合：需要穩定視覺輸出、保持品牌一致性的企業或個人品牌。</div>
-      <ul class="plan-list">
-        <li>每張設計包含：量身訂造版面、品牌色＋字體統一、行銷文案微調、提供微調。</li>
-        <li>包月方案：每月固定張數，主視覺＋促銷＋教育內容，風格一致、優先交稿。</li>
-        <li>適用場景：IG feed、Threads 圖文、Facebook Post、官方網站圖、廣告靜態圖。</li>
-      </ul>
-    </div>
-
-    <div class="plan-group">
-      <div class="plan-title">⚙️ 08｜全包式 Premium Plan（推薦）</div>
-      <div class="plan-tag">適合：初創或中小品牌需要一站式成長方案。</div>
-      <ul class="plan-list">
-        <li>可從影片創作／廣告投放／KOL 推廣／Threads／SEO／社交小號中任選多項組合。</li>
-        <li>由專人統籌與執行，每月固定策略檢討與報告。</li>
-        <li>整合各模組數據，提供持續優化與成長建議。</li>
-      </ul>
-    </div>
+    <img
+      src="plans-section.jpg"
+      alt="HeaG Marketing 服務模組與方案總覽"
+      class="section-photo"
+    >
   </section>
 
   <!-- 合作流程 -->
